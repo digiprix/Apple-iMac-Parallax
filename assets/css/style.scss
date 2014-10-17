@@ -1,0 +1,128 @@
+/*
+  __  __ _     _         
+ |  \/  (_)_ _(_)_ _  ___
+ | |\/| | \ \ / | ' \(_-<
+ |_|  |_|_/_\_\_|_||_/__/
+
+*/
+
+@mixin reset {
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        text-decoration: none;
+    }
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote {
+        &:before, &:after {
+            content: "";
+            content: none;
+        }
+    }
+    q {
+        &:before, &:after {
+            content: "";
+            content: none;
+        }
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+@mixin clearfix() {
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;
+    -moz-box-sizing: $box-model;
+    box-sizing: $box-model;
+}
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+/*
+  _                       _   
+ | |   __ _ _  _ ___ _  _| |_ 
+ | |__/ _` | || / _ \ || |  _|
+ |____\__,_|\_, \___/\_,_|\__|
+            |__/               
+*/
+
+@include reset();
+body {
+    color: #333;
+    font-family: Open sans;;
+}
+h1 {
+    position: fixed;
+    top: 50%;
+    transform:translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 52px;
+    z-index: 999;
+    color: rgba(255,255,255, .3);
+}
+.mac {
+    height: 613px;
+    width: 764px;
+    margin: 1340px auto 100px;
+    background: #fff url("../assets/images/bg.jpg") no-repeat 0 0;
+    background-size: 764px 613px;
+    &.intro {
+        position: fixed;
+        width: 2548px;
+        height: 2052px;
+        background-size: 100% auto;
+        margin: 0;
+        top: 0;
+        left: 50%;
+        margin-top: -300px;
+        margin-left: -1274px;
+        transform-origin: 50%;
+    }
+}
+.content {
+    width: 500px;
+    margin: 0 auto 150px;
+    h2 {
+        font-size: 52px;
+        line-height: 1.0865;
+        font-weight: 300;
+        margin-bottom: 48px;
+    }
+    p {
+        font-size: 18px;
+        margin: 1em 0 0 0;
+        line-height: 1.8;
+        color: #555;
+        font-weight: 400;
+        a {
+            color: #555;
+            text-decoration: underline;
+        }
+    }
+}
